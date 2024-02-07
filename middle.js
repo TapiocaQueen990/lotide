@@ -30,7 +30,7 @@ const middle = function(array) {
   }
   // if array is odd i can take length and divide by 2 round down and return the middle element
    else if (array.length % 2 === 1) {
-    return array[Math.floor(mid)];
+    return [array[Math.floor(mid)]];
   }
   // if array is even divide length by 2 minus 1 (starting point) and then plus 1.
   else {
