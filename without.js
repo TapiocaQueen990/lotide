@@ -25,13 +25,12 @@ const assertArraysEqual = function(arr1, arr2) {
 const without = function(source, itemsToRemove) {
   let altered = [];
   for (let i = 0; i < source.length; i++) {
-    for (let j = 0; j < itemsToRemove.length; j++) {
-      if (source[i].includes(itemsToRemove)) {
-        altered.push(source[i]);
-      }
+    if (itemsToRemove.includes(source[i])) {
+      altered.push(source[i]);
     }
   }
   return altered;
 };
+  
 
 assertArraysEqual(without([1, 2, 3], [1]), [2, 3]);
