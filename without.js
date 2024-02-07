@@ -26,7 +26,7 @@ const without = function(source, itemsToRemove) {
   let altered = [];
   for (let i = 0; i < source.length; i++) {
     for (let j = 0; j < itemsToRemove.length; j++) {
-      if (source[i] !== itemsToRemove[j]) {
+      if (source[i].includes(itemsToRemove)) {
         altered.push(source[i]);
       }
     }
@@ -34,4 +34,4 @@ const without = function(source, itemsToRemove) {
   return altered;
 };
 
-assertArraysEqual(without([1, 2, 3], [1]));
+assertArraysEqual(without([1, 2, 3], [1]), [2, 3]);
