@@ -26,6 +26,8 @@ const letterPositions = function(sentence) {
   for (let i = 0; i < sentence.length; i++) {
     //variable for cleanign up code
     const char = sentence[i];
+  // added for spaces
+  if (char !== " ") {
     //if the character exists already...
     if (results[char]) {
       results[char].push(i);
@@ -34,13 +36,15 @@ const letterPositions = function(sentence) {
       results[char] = [i];
     }
   }
+}
   return results;
 };
 
-console.log(letterPositions("hello"));
-assertArraysEqual(letterPositions("hello").e, [1]);
-
-
+const result = letterPositions('hello');
+assertArraysEqual(result['h'], [0]);
+assertArraysEqual(result['e'], [1]);
+assertArraysEqual(result['l'], [2, 3]);
+assertArraysEqual(result['o'], [4]);
 // {
 //   l: [0],
 //   i: [1, 11],
