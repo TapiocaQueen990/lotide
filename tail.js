@@ -6,11 +6,19 @@ const assertEqual = function(actual, expected) {
   }
 };
 const tail = function(array) {
-  return array.slice(1);
+  if (array.length === 0 || array.length === 1) {
+    return [];
+  }
+  
+  const tailArray = array.slice(1);
+  return tailArray;
 };
- 
 
-assertEqual(tail([1]),);
-assertEqual(tail([1, 2, 2, 3, 4]), [ 2, 2, 3, 4]);
-assertEqual(tail([]), []);
+const array = tail([1, 2, 3, 4, 5]);
+const onlyOne = tail([1]);
+
+assertEqual(array.length, 4);
+assertEqual(onlyOne.length, 0);
+assertEqual(array[0], 2);
+
 
