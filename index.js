@@ -13,6 +13,7 @@ const findKeyByValue = require("./findKeyByValue");
 const letterPositions = require("./letterPositions");
 const takeUntil = require("./takeUntil");
 const without = require("./without");
+const flatten = require("./flatten");
 
 
 module.exports = {
@@ -30,7 +31,8 @@ module.exports = {
   findKeyByValue: findKeyByValue,
   letterPositions: letterPositions,
   takeUntil: takeUntil,
-  without: without
+  without: without,
+  flatten: flatten
 
 };
 
